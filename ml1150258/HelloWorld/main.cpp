@@ -18,7 +18,7 @@ using namespace std;
 //Execution Begins Here!
 int main(int argc, char** argv){
     //Output simple text
-    cout << "Hello World" << endl;
+    cout << "Hello World at Github" << endl;
     //Exit stage right!
     return 0;
 }
