@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: Just an example
+ * Author: rcc
  *
- * Created on June 23, 2014, 12:22 PM
+ * Created on June 24, 2014, 1:41 PM
  */
 
 #include <cstdlib>
