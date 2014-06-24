@@ -1,14 +1,12 @@
 /* 
  * File:   main.cpp
- * Author: Bank
- * Created on June 24, 2014, 11:27 AM
+ * Author: Idalia Ramirez
+ * Created on June 24, 2014, 11:34 AM
  */
-
-//System Library
+//System Libraries
 #include <iostream>
 using namespace std;
-
-//User Defined Libraries
+//User Defined Library
 
 //Global Constants
 
@@ -32,5 +30,6 @@ int main(int argc, char** argv) {
     cout<<"Number of Citrus Drinkers = "<<citDrnk<<endl;
     
     //Exit Stage Right!
-    return 0;
+ return 0;
 }
+

@@ -1,8 +1,8 @@
-/* 
- * File:   main.cpp
- * Author: Bank
- * Created on June 24, 2014, 11:27 AM
- */
+/*
+* File: main.cpp
+* Author: Dr. Mark E. Lehr
+* Created on June 24, 2014, 11:27 AM
+*/
 
 //System Library
 #include <iostream>
@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     //Declare and initialize variables
     unsigned short cusSrvy=12467;//Customers Surveyed
     float eDrnkp=1.4e-1f;//Percentage Energy Drinkers from Survey
-    float cDrnkp=6.4e-1f;//Percentage of Citrus Drinkers of those Energy Drinkers
+    float cDrnkp=6.4e-1f;//Percentage of Citrus Drinkers of from Energy Drinkers
     unsigned short enDrnk,citDrnk;//Number of energy and citrus drinkers
     
     //Calculate the number of energy and citrus drinkers

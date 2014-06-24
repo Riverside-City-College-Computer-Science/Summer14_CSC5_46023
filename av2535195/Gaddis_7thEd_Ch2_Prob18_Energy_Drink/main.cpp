@@ -1,8 +1,10 @@
 /* 
  * File:   main.cpp
- * Author: Bank
- * Created on June 24, 2014, 11:27 AM
+ * Author: Anh Vu
+ *
+ * Created on June 24, 2014, 12:27 PM
  */
+
 
 //System Library
 #include <iostream>

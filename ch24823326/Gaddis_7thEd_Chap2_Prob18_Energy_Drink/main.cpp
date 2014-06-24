@@ -1,9 +1,9 @@
 /* 
  * File:   main.cpp
- * Author: Bank
- * Created on June 24, 2014, 11:27 AM
+ * Author: rcc
+ *
+ * Created on June 24, 2014, 1:16 PM
  */
-
 //System Library
 #include <iostream>
 using namespace std;
@@ -34,3 +34,4 @@ int main(int argc, char** argv) {
     //Exit Stage Right!
     return 0;
 }
+

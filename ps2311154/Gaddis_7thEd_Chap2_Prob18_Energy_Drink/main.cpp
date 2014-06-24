@@ -1,7 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: Bank
- * Created on June 24, 2014, 11:27 AM
+ * Author: C. Phillip Lierz
+ * Purpose: Gaddis 7th edition Chapter 2 Problem 18 Homework
+ * Created on June 24, 2014, 11:39 AM
  */
 
 //System Library
