@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: rcc
+ * Author: Just an example
  *
  * Created on June 23, 2014, 12:22 PM
  */
