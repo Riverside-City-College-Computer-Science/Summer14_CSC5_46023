@@ -25,9 +25,9 @@ int main(int argc, char** argv) {
     cin >> num1;
     cin >> num2;
     cout << "Sum: ";
-    cout << sum;
+    cout << sum << endl; //Using endl as "Enter" to separate lines
     cout << "Product: ";
-    cout << prod;
+    cout << prod << endl; 
     
     cout << "End of the Program.\n";
             
