@@ -53,5 +53,3 @@ int main (){
     return 0;
     //main.cpp:53:13: error: expected ‘}’ at end of input
 }
-
-
