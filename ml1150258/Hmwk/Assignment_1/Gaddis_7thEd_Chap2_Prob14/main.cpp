@@ -14,6 +14,7 @@ using namespace std;
 
 //Execution Begins Here
 int main(int argc, char** argv) {
+    
     //Declare Variables
     const char NSIZE=25;//Includes the null terminator
     char name[NSIZE];//Character array (i.e. character string)
@@ -21,6 +22,7 @@ int main(int argc, char** argv) {
     char address[ASIZE];//Character array (i.e. character string)
     char city[15],state[3],zip[6];
     char tlphone[14];
+    
     //Input the data
     cout<<"Input your Name"<<endl;
     cout<<"Format FN MI LN"<<endl;
@@ -33,11 +35,13 @@ int main(int argc, char** argv) {
     cin>>city>>state>>zip;
     cout<<endl<<"Telephone number (DDD)DDD-DDDD"<<endl;
     cin>>tlphone;
+    
     //Output the data
     cout<<"Name:    "<<name<<endl;
     cout<<"Address: "<<address<<endl;
     cout<<"City,State,ZIP  "<<city<<" "<<state<<" "<<zip<<endl;
     cout<<"Telephone #     "<<tlphone<<endl;
+    
     //Exit stage right!
     return 0;
 }
