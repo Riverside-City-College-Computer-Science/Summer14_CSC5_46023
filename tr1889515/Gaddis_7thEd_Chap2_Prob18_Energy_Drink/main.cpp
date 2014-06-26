@@ -1,6 +1,6 @@
 /*
 * File: main.cpp
-* Author: Dr. Mark E. Lehr
+* Author: Tony Reyes
 * Created on June 24, 2014, 11:27 AM
 */
 
