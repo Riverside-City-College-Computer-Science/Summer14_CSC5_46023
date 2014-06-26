@@ -34,9 +34,9 @@ using namespace std;
 //int main ) {
 int main (){
     //Declare all variables
-    int nPods;//number_of_pods, 
-    int pPerPod;//Peas per pod
-    int totPeas;//Total peas;
+    unsigned int nPods;//number_of_pods, 
+    unsigned int pPerPod;//Peas per pod
+    unsigned int totPeas;//Total peas;
     //Input the knowns
     //main.cpp:41:5: error: ‘cut’ was not declared in this scope
     //cut<<"Input the number of pods"<<endl;
@@ -53,5 +53,3 @@ int main (){
     return 0;
     //main.cpp:53:13: error: expected ‘}’ at end of input
 }
-
-
