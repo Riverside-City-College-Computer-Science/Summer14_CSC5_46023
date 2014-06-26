@@ -1,10 +1,10 @@
 /* 
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
- * Created on June 24, 2014, 11:27 AM
+ * Author: Krishen Wadhwani
+ * Created on June 24, 2014, 11:20 AM
+ * Purpose: Homework Assignment 1
  */
-
-//System Library
+//System library
 #include <iostream>
 using namespace std;
 
@@ -14,23 +14,26 @@ using namespace std;
 
 //Function Prototypes
 
-//Execution Begins Here!
-int main(int argc, char** argv) {
-    //Declare and initialize variables
-    unsigned short cusSrvy=12467;//Customers Surveyed
-    float eDrnkp=1.4e-1f;//Percentage Energy Drinkers from Survey
-    float cDrnkp=6.4e-1f;//Percentage of Citrus Drinkers of those Energy Drinkers
-    unsigned short enDrnk,citDrnk;//Number of energy and citrus drinkers
+//Execution Begins Here
+
+int main(int argc, char** argv) 
+{
+    //Declare and Initialize Variables
     
-    //Calculate the number of energy and citrus drinkers
-    enDrnk=cusSrvy*eDrnkp;
-    citDrnk=enDrnk*cDrnkp;
+    unsigned short cus = 12467; //Total customers surveyed
+    float enrgyp = 0.14f;       //Percentage of Energy Drinkers
+    unsigned short toten;       //Total Number of Energy Drinkers
+    float citrusp = 0.64f;      //Percentage of Energy Drinkers who Drink Citrus
+    unsigned short totcis;      //Total Number of Citrus Drinkers
     
-    //Output the results
-    cout<<"Total Number of Customers Surveyed = "<<cusSrvy<<endl;
-    cout<<"Number of Energy Drinkers = "<<enDrnk<<endl;
-    cout<<"Number of Citrus Drinkers = "<<citDrnk<<endl;
+    //Calculate Energy and Citrus Drinkers
     
-    //Exit Stage Right!
+    toten = cus*enrgyp;         //Calculating the Total Number of Energy Drinkers
+    totcis = toten*citrusp;     //Calculating the Total number of Citrus Drinkers
+    
+    //Output the Results!
+    
+    cout <<"The total number of customers who drink Citrus Energy Drinks is "<< totcis<<endl;
+    
     return 0;
 }
