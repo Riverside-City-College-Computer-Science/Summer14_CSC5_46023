@@ -26,17 +26,17 @@ int main(int argc, char** argv)
     int time, //Amount of time, given in seconds  
         dist; //Distance traveled through free fall
     
-    cout >> "How much time did the object fall for? \n";
+    cout << "How much time did the object fall for? \n";
     cin >> time;
     //Calculate the distance traveled
     dist = (time*time*GRAV)/2;
     
-    //Output all the datae
-    cout >> "If an object falls for ";
-    cout >> time;
-    cout >> " seconds, then the object will travel ";
-    cout >> dist;
-    cout >> " feet!";
+    //Output all the data
+    cout << "If an object falls for ";
+    cout << time;
+    cout << " seconds, then the object will travel ";
+    cout << dist;
+    cout << " feet!";
      
             
     return 0;

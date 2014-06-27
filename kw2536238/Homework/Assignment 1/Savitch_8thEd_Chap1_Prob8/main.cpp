@@ -21,7 +21,7 @@ using namespace std;
 int main(int argc, char** argv) 
 {
     //Declare and Initialize All Variables
-    short quat, //Number of Quarters
+    unsigned short quat, //Number of Quarters
         dime, //Number of Dimes
         nick, //Number of Nickels
         totq, //Total cents for quarters
