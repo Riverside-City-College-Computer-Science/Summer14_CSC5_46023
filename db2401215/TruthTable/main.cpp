@@ -1,7 +1,7 @@
-/* 
+/* Truth Table
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
- * Created on June 30, 2014, 10:24 AM
+ * Author: Daniel Boebinger
+ * Created on June 30, 2014, 11:15 AM
  */
 
 //System Libraries
@@ -48,13 +48,13 @@ int main(int argc, char** argv) {
     cout<<(!y?'T':'F')<<"   ";
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
-    cout <<(x^y?'T':'F')<<"    ";
-    cout <<(x^y^x?'T':'F')<<"     "; 
-    cout << (x^y^y?'T':'F')<<"      ";
-    cout << (!(x&&y)?'T':'F')<<"       ";
-    cout << (!x||!y?'T':'F')<<"       ";
-    cout << (!(x||y)?'T':'F')<<"      ";
-    cout << (!x&&!y?'T':'F')<< endl;
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"     ";
+    cout<<(x^y^y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"       ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<endl;
     //Second row
     y=false;
     cout<<(x?'T':'F')<<" ";
@@ -63,29 +63,29 @@ int main(int argc, char** argv) {
     cout<<(!y?'T':'F')<<"   ";
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
-    cout <<(x^y?'T':'F')<<"    ";
-    cout <<(x^y^x?'T':'F')<<"     "; 
-    cout << (x^y^y?'T':'F')<<"      ";
-    cout << (!(x&&y)?'T':'F')<<"       ";
-    cout << (!x||!y?'T':'F')<<"       ";
-    cout << (!(x||y)?'T':'F')<<"      ";
-    cout << (!x&&!y?'T':'F')<< endl;
-    //Third row
-    x=false; y=true;
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"     ";
+    cout<<(x^y^y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"       ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<endl;
+    //Third Row
+    x=false,y=true;
     cout<<(x?'T':'F')<<" ";
     cout<<(y?'T':'F')<<"  ";
     cout<<(!x?'T':'F')<<"  ";
     cout<<(!y?'T':'F')<<"   ";
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
-    cout <<(x^y?'T':'F')<<"    ";
-    cout <<(x^y^x?'T':'F')<<"     "; 
-    cout << (x^y^y?'T':'F')<<"      ";
-    cout << (!(x&&y)?'T':'F')<<"       ";
-    cout << (!x||!y?'T':'F')<<"       ";
-    cout << (!(x||y)?'T':'F')<<"      ";
-    cout << (!x&&!y?'T':'F')<< endl;
-    //Fourth row
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"     ";
+    cout<<(x^y^y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"       ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<endl;
+    //Fourth Row
     y=false;
     cout<<(x?'T':'F')<<" ";
     cout<<(y?'T':'F')<<"  ";
@@ -93,14 +93,14 @@ int main(int argc, char** argv) {
     cout<<(!y?'T':'F')<<"   ";
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
-    cout <<(x^y?'T':'F')<<"    ";
-    cout <<(x^y^x?'T':'F')<<"     "; 
-    cout << (x^y^y?'T':'F')<<"      ";
-    cout << (!(x&&y)?'T':'F')<<"       ";
-    cout << (!x||!y?'T':'F')<<"       ";
-    cout << (!(x||y)?'T':'F')<<"      ";
-    cout << (!x&&!y?'T':'F')<< endl;
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"     ";
+    cout<<(x^y^y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"       ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<endl;
+    
     //Exit stage right!
     return 0;
 }
-
