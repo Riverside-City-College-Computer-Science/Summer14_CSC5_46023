@@ -26,10 +26,11 @@ int main(int argc, char** argv) {
     grade=(score>=70?'P':'F');
     cout<<"Your Pass/Fail grade = "<<grade<<endl;
     //For a letter grade
-    grade=(score>=90)?'A':
-          (score>=80)?'B':
-          (score>=70)?'C':
-          (score>=60)?'D':'F';
+    if(score<60)grade='F';
+    else if(score<70)grade='D';
+    else if(score<80)grade='C';
+    else if(score<90)grade='B';
+    else grade='A';
     cout<<"Your Letter grade = "<<grade<<endl;
     //Exit stage right
     return 0;
