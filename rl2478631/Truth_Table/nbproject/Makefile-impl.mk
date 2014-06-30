@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=RLucatero_Truth Table
+PROJECTNAME=Truth_Table
 
 # Active Configuration
 DEFAULTCONF=Debug
