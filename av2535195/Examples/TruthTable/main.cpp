@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
     cout<<(!x||!y?'T':'F')<<"      ";
     cout<<(!(x||y)?'T':'F')<<"      ";
     cout<<(!x&&!y?'T':'F')<<" "<<endl;
-    //Second row
+    //Third row
     x=false,y=true;
        cout<<(x?'T':'F')<<" ";
     cout<<(y?'T':'F')<<"  ";
@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
     cout<<(!x||!y?'T':'F')<<"      ";
     cout<<(!(x||y)?'T':'F')<<"      ";
     cout<<(!x&&!y?'T':'F')<<" "<<endl;
-    //Third row
+    //Fourth row
     y=false;
     cout<<(x?'T':'F')<<" ";
     cout<<(y?'T':'F')<<"  ";
