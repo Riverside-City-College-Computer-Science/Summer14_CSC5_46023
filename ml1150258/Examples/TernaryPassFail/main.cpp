@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
+ * Author: Dr. Mark E. Lehr 
  * Created on June 30, 2014, 10:24 AM
  */
 
@@ -24,9 +24,12 @@ int main(int argc, char** argv) {
     cin>>score;
     //Output the grade pass/fail
     grade=(score>=70?'P':'F');
-    cout<<"Your pass/fail grade = "<<grade<<endl;
+    cout<<"Your Pass/Fail grade = "<<grade<<endl;
     //For a letter grade
-    grade=(score>=90)?'A':(score>=80)?'B':(score>=70)?'C':(score>=60)?'D':'F';
+    grade=(score>=90)?'A':
+          (score>=80)?'B':
+          (score>=70)?'C':
+          (score>=60)?'D':'F';
     cout<<"Your Letter grade = "<<grade<<endl;
     //Exit stage right
     return 0;
