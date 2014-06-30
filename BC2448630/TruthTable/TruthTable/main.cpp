@@ -49,11 +49,12 @@ int main(int argc, char** argv) {
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
     cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"    ";
     cout<<(x^y^y?'T':'F')<<"      ";
     cout<<(!(x&&y)?'T':'F')<<"     ";
     cout<<(!x||!y?'T':'F')<<"        ";
-    cout<<(!(x||y)?'T':'F')<<"    ";
-    cout<<((!x&&!y)?'T':'F')<<" "<<endl;
+    cout<<(!(x||y)?'T':'F')<<"      ";
+    cout<<((!x&&!y)?'T':'F')<<endl;
     
     
     //Second row
@@ -65,10 +66,11 @@ int main(int argc, char** argv) {
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
     cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"    ";
     cout<<(x^y^y?'T':'F')<<"      ";
     cout<<(!(x&&y)?'T':'F')<<"     ";
     cout<<(!x||!y?'T':'F')<<"        ";
-    cout<<(!(x||y)?'T':'F')<<"    ";
+    cout<<(!(x||y)?'T':'F')<<"      ";
     cout<<((!x&&!y)?'T':'F')<<" "<<endl;
     //Third row
     x=false, y=true;
@@ -79,10 +81,11 @@ int main(int argc, char** argv) {
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
     cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"    ";
     cout<<(x^y^y?'T':'F')<<"      ";
     cout<<(!(x&&y)?'T':'F')<<"     ";
     cout<<(!x||!y?'T':'F')<<"        ";
-    cout<<(!(x||y)?'T':'F')<<"    ";
+    cout<<(!(x||y)?'T':'F')<<"      ";
     cout<<((!x&&!y)?'T':'F')<<" "<<endl;
     //Fourth Row
     x=false, y=false;
@@ -93,11 +96,12 @@ int main(int argc, char** argv) {
     cout<<(x&&y?'T':'F')<<"    ";
     cout<<(x||y?'T':'F')<<"   ";
     cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^x?'T':'F')<<"    ";
     cout<<(x^y^y?'T':'F')<<"      ";
     cout<<(!(x&&y)?'T':'F')<<"     ";
     cout<<(!x||!y?'T':'F')<<"        ";
-    cout<<(!(x||y)?'T':'F')<<"    ";
-    cout<<((!x&&!y)?'T':'F')<<" "<<endl;
+    cout<<(!(x||y)?'T':'F')<<"      ";
+    cout<<((!x&&!y)?'T':'F')<<"  "<<endl;
     //Exit stage right!
     return 0;
 }
