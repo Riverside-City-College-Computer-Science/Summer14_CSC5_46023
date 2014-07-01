@@ -5,9 +5,9 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <iomanip>
-#include <cmath>
+#include <iostream>//cout/cin
+#include <iomanip> //Formatting Currency
+#include <cmath>   //Power function
 using namespace std;
 
 //User Libraries
