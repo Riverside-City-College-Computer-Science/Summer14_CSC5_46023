@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     //Determine if the answer is close to 2
     if (guess>2){
         cout<<"Your guess is too high and will get you "<<guess<<" times your money"<<endl;
-    }else if (guess=2){
+    }else if (guess==2){
         cout<<"Your guess is perfect and will get you "<<guess<<" times your money"<<endl;
     }else {
         cout<<"Your guess is too low and will get you "<<guess<<" times your money"<<endl;
