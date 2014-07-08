@@ -36,18 +36,30 @@ int main(int argc, char** argv) {
         getline(cin, cdValN);
         
         //Correlate the card value to its number
-        if (cdValN == 'Jack' || cdValN == 'King' || cdValN == 'Queen')
+        if (cdValN == "Jack" || cdValN == "King" || cdValN == "Queen" || cdValN == "10")
             cdVal = 10;
-        else if (cdValN == 'Ace')
+        else if (cdValN == "Ace")
             cout << "Would you like to use your ace as a 1 or 11? ",
-            cin >> cdVal,
-            cin.ignore();
-        else
-            cdVal = cdValN;
+            cin >> cdVal;
+        else if (cdValN == "2")
+            cdVal = 2;
+        else if (cdValN == "3")
+            cdVal = 3;
+        else if (cdValN == "4")
+            cdVal = 4;
+        else if (cdValN == "5")
+            cdVal = 5;
+        else if (cdValN == "6")
+            cdVal = 6;
+        else if (cdValN == "7")
+            cdVal = 7;
+        else if (cdValN == "8")
+            cdVal = 8;
+        else if (cdValN == "9")
+            cdVal = 9;
+        cin.ignore();
         
-        totVal=0;
-        totVal = totVal + cdVal;
-                    
+        totVal += cdVal;          
     }
     
     cout << "Your total number is " << totVal;
