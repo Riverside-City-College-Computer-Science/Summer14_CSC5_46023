@@ -8,7 +8,6 @@
 //System Level Libraries
 #include <iostream>
 #include <iomanip>
-#include <string>
 using namespace std;
 
 //User Defined Libraries
@@ -23,14 +22,15 @@ int main(int argc, char** argv) {
     char cdNum=0;      //Number of cards that the User has
     char cdValN;     // The value of your card (as inputted by the user)
     unsigned short cdVal=0,  //The actual card value
-                   totVal=0;  //The total value
+                   totVal=0,  //The total value
+                   count = 0; 
     
     cout << "How many cards do you have? You must have between 2 and 5 cards. ";
     cin >> cdNum;
     
-    while (cdNum > 0,cdNum = cdNum-1){
+    while (cdNum > count){
         //Decrement the value by one each loop
-               
+        cdNum++;       
         //input value of  card
         cout << "What is the value of your card?";
         cin >> cdValN;
@@ -53,4 +53,3 @@ int main(int argc, char** argv) {
     
     return 0;
 }
-
