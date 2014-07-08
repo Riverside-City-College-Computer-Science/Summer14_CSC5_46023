@@ -51,8 +51,7 @@ int main(int argc, char** argv) {
     }
     
     //Output the results
-    if(nDays<seqWdth)fi=fim2;
-    if(nDays<2*seqWdth)fi=fim1;
+    if(nDays<2*seqWdth)fi=fim2;
     crudWt*=fi;
     cout<<"Total Crud = "<<crudWt<<" lbs"<<endl;
 
