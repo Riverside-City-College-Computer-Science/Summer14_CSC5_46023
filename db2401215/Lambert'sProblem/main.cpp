@@ -13,8 +13,8 @@ using namespace std;
 //User Libraries
 
 //Global Constants
-double pi=3.14159265;//Using double because of the number of significant digits
-double mu=398600.4418;//Units: km^3/s^2 Using double because of the number of significant digits
+const double PI=3.14159265;//pi Using double because of the number of significant digits
+const double MU=398600.4418;//Earth's Gravitational constant Units: km^3/s^2 Using double because of the number of significant digits
 //Function Prototypes
 
 //Execution Starts Here!
@@ -33,18 +33,15 @@ int main(int argc, char** argv) {
     //Outputs
     float r1;    //magnitude of position 1 vector in kilometers
     float r2;    //magnitude of position 2 vector in kilometers
-    float r1xr2x;//r1 cross r2 x value in kilometers squared
-    float r1xr2y;//r1 cross r2 y value in kilometers squared
     float r1xr2z;//r1 cross r2 z value in kilometers squared
     float theta; //delta theta (change in theta in radians)
-    float a;     //'A' function for Lambert's Problem
-    float z;     //value of 'Z' for Lambert's Problem (found using Newton's method)
+    float a;     //'A' function for Lambert's Problem in kilometers
+    float z=0;   //(initialized) value of 'Z' for Lambert's Problem (found using Newton's method)
     float c;     //C(z) function for Lambert's Problem
     float s;     //S(c) function for Lambert's Problem
     float fz;    //F(z) function for Lambert's Problem
     float fprime;//F'(z) function for Lambert's Problem
     float y;     //y(z) function for Lambert's Problem
-    float y0;    //y(0) function for Lambert's Problem
     float f;     //f function for Lambert's Problem
     float g;     //g function for Lambert's Problem
     float fdot;  //fdot function for Lambert's Problem
@@ -83,7 +80,7 @@ int main(int argc, char** argv) {
             if (r1xr2z>=0){
                 theta=acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
             }else{
-                theta=2*pi-acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
+                theta=2*PI-acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
             }
             break;
         }
@@ -91,7 +88,7 @@ int main(int argc, char** argv) {
             if (r1xr2z<0){
                 theta=acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
             }else{
-                theta=2*pi-acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
+                theta=2*PI-acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
             }
             break;
         }
@@ -100,7 +97,7 @@ int main(int argc, char** argv) {
             if (r1xr2z>=0){
                 theta=acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
             }else{
-                theta=2*pi-acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
+                theta=2*PI-acos((r1i*r2i+r1j*r2j+r1k*r2k)/(r1*r2));
             }
             break;
         }
@@ -108,53 +105,56 @@ int main(int argc, char** argv) {
     //Calculate 'A' function
     a=sin(theta)*sqrt(r1*r2/(1-cos(theta)));
     //Calculate Z by iterating using Newton's method until convergence
-    float z=0;//Initialize variable
     do{
         if (z>0){
             c=(1-cos(sqrt(z)))/z;
-            s=(sqrt(z)-sin(sqrt(z)))/pow(z,1/3);
+            s=(sqrt(z)-sin(sqrt(z)))/pow(z,1.5);
         }else if (z<0){
             c=((cosh(sqrt(-z))-1)/(-z));
-            s=(sinh(sqrt(z))-sqrt(-z))/pow(z,1/3);
+            s=(sinh(sqrt(-z))-sqrt(-z))/pow(-z,1.5);
         }else{
-            c=1/2;
+            c=0.5;
             s=1/6;
         }
-        y=r1+r2+a((z*s-1)/sqrt(c));
-        y0=r1+r2+a(-1/sqrt(1/2));
-        if (!z==0){
-            fprime=pow(y/c,3/2)*((c-3*s*s/(4*c))/(2*z)+3*s*s/(4*c))+a/8(3*s*sqrt(y)/c+a*sqrt(c/y));
+        y=r1+r2+a*((z*s-1)/sqrt(c));
+        if (z==0){
+            fprime=sqrt(2)*pow(y,1.5)/40+a/8*(sqrt(y)+a*sqrt(1/(2*y)));
         }else{
-            fprime=sqrt(2)*pow(y0,3/2)/40+a/8(sqrt(y0)+a*sqrt(1/(2*y0)));
+            fprime=pow((y/c),1.5)*((c-3*s/(2*c))/(2*z)+3*s*s/(4*c))+a/8*(3*s*sqrt(y)/c+a*sqrt(c/y));
         }
-        fz=pow(y/c,3/2)*s+a*sqrt(y)-sqrt(mu)*t;
-        z-=fz/fprime;
+        fz=pow((y/c),1.5)*s+a*sqrt(y)-sqrt(MU)*t;
+        z=z-fz/fprime;
     }
-    while(fz/fprime>1e-5);
+    while(fabs(fz/fprime)>1e-6);
     //Calculate f
     f=1-y/r1;
     //Calculate g
-    g=a*sqrt(y/mu);
+    g=a*sqrt(y/MU);
     //Calculate fdot
-    fdot=sqrt(mu)/(r1*r2)*sqrt(y/c)*(z*s-1);
+    fdot=sqrt(MU)/(r1*r2)*sqrt(y/c)*(z*s-1);
     //Calculate gdot
     gdot=1-y/r2;
     //Calculate velocity at point 1
-    v1i=1/g(r2i-f*r1i);
-    v1j=1/g(r2j-f*r1j);
-    v1k=1/g(r2k-f*r1k);
+    v1i=1/g*(r2i-f*r1i);
+    v1j=1/g*(r2j-f*r1j);
+    v1k=1/g*(r2k-f*r1k);
     //Calculate velocity at point 2
-    v2i=1/g(gdot*r2i-r1i);
-    v2j=1/g(gdot*r2j-r1j);
-    v2k=1/g(gdot*r2k-r1k);
+    v2i=1/g*(gdot*r2i-r1i);
+    v2j=1/g*(gdot*r2j-r1j);
+    v2k=1/g*(gdot*r2k-r1k);
     
     //Output the results
-    //NOTE: Output what kind of orbit it is (elliptical, hyperbolic, etc)
-    //'Double Check' outputs
-    cout<<"r1 = "<<r1<<endl;
-    cout<<"r2 = "<<r2<<endl;
-    cout<<"Theta = "<<theta<<" radians"<<endl;
-    cout<<"A = "<<a<<endl;
+    if (z<0){
+        cout<<"Orbit Type: Hyperbolic Orbit";
+    }else if (z==0){
+        cout<<"Orbit Type: Parabolic Orbit";
+    }else{
+        cout<<"Orbit Type: Elliptical Orbit";
+    }
+    cout<<fixed<<showpoint<<setprecision(4)<<endl;
+    cout<<"Orbital Velocities:"<<endl;
+    cout<<"V1 = "<<setw(10)<<v1i<<"i "<<setw(10)<<v1j<<"j "<<setw(10)<<v1k<<"k (km/sec)"<<endl;
+    cout<<"V2 = "<<setw(10)<<v2i<<"i "<<setw(10)<<v2j<<"j "<<setw(10)<<v2k<<"k (km/sec)"<<endl;
     
     //Exit stage right
     return 0;
