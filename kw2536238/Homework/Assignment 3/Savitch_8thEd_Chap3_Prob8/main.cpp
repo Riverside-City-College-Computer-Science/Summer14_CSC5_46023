@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
 
     short cdNum=0;      //Number of cards that the User has
     string cdValN;     // The value of your card (as inputted by the user)
-    unsigned short cdVal=0,  //The actual card value
+    unsigned short cdVal,  //The actual card value
                    totVal=0,  //The total value
                    count = 0; 
     
@@ -29,20 +29,30 @@ int main(int argc, char** argv) {
     cin >> cdNum;
     
     while (cdNum > count){
+        
         //Decrement the value by one each loop
         count++;       
+        
         //input value of  card
         cout << "What is the value of your card?";
         getline(cin, cdValN);
-        
-        //Correlate the card value to its number
-        if (cdValN == "Jack" || cdValN == "King" || cdValN == "Queen" || cdValN == "10")
+        cin.ignore();
+        cout<<cdValN<<endl;
+        cin.ignore();
+        //Correlate the card type to its number
+        if (cdValN == "Jack" || cdValN == "King" || cdValN == "Queen" || cdValN == "10"){
             cdVal = 10;
-        else if (cdValN == "Ace")
+            cout<<"I AM 10 "<<endl;
+        }
+        else if (cdValN == "Ace"){
             cout << "Would you like to use your ace as a 1 or 11? ",
-            cin >> cdVal;
-        else if (cdValN == "2")
+            cin >> cdVal,
+            cin.ignore();
+        }
+        else if (cdValN == "2"){
+            cout<<"I am here"<<endl;
             cdVal = 2;
+        }
         else if (cdValN == "3")
             cdVal = 3;
         else if (cdValN == "4")
@@ -59,11 +69,12 @@ int main(int argc, char** argv) {
             cdVal = 9;
         cin.ignore();
         
-        totVal += cdVal;          
+        //calculate the total by incrementing totVal with cdVal
+        totVal = totVal + cdVal;          
     }
     
+    //Output data
     cout << "Your total number is " << totVal;
-    //Declare and Initialize All Variables
-    
+ 
     return 0;
 }
