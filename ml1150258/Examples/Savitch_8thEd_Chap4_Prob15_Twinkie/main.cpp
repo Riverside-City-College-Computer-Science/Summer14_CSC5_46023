@@ -23,6 +23,8 @@ int main(int argc, char** argv) {
     //Declare variables
     unsigned short cstTwke=350;//350 pennies or $3.50
     unsigned short total=0;//Amount tendered in pennies
+    unsigned short change;//Calculate change at the end
+    unsigned short nQuarters,nNickels,nDimes;//Number of coins to return
     char vD=10,vN=5,vQ=25,vB=100;//Value of each coin
     const int SIZE=8;
     char dime[SIZE]="dime";
@@ -57,9 +59,24 @@ int main(int argc, char** argv) {
     }while(total<cstTwke);
     
     //Calculate the change and return
-    cout<<"Be happy getting fat and ruining your health"<<endl;
+    cout<<"Be happy ruining your health! :)"<<endl;
     float display=(total-cstTwke)*CNVPDOL;//Display in dollars
     cout<<"Your change is $"<<display<<endl;
-
+    
+    //Calculate the number of quarters/dimes/nickels
+    //Gives fewest number of coins
+    change=total-cstTwke;
+    nQuarters=change/vQ;
+    change-=vQ*nQuarters;
+    nDimes=change/vD;
+    change-=vD*nDimes;
+    nNickels=change/vN;
+    
+    //Output the change in coins
+    cout<<nQuarters<<" "<<quarter<<"s"<<endl;
+    cout<<nDimes<<" "<<dime<<"s"<<endl;
+    cout<<nNickels<<" "<<nickel<<"s"<<endl;
+    
+    //Exit stage right!
     return 0;
 }
