@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -22,14 +23,15 @@ int main(int argc, char** argv) {
     
     //Part 1 Declare variables
     float aprxPi1=1;
-    int nTerms=10000000;
+    int nTerms=100000;
     //Loop to approximate pi with infinite sequence
     for(int i=3;i<=nTerms/2;i+=4){
         aprxPi1+=(-1.0f/i+1.0f/(i+2));
     }
     aprxPi1*=4;
     //Output the results
-    cout<<"Approx PI utilizing infinite sequence = "
+    cout<<fixed<<showpoint<<setprecision(15);
+    cout<<"Approx PI utilizing infinite sequence = "<<endl
         <<aprxPi1<<" with "<<nTerms<<" terms"<<endl;
     
     //Declare Part 2 Mark's Stochastic Integration
@@ -48,6 +50,9 @@ int main(int argc, char** argv) {
     //Output the results
     cout<<"Approx PI utilizing Darts = "
         <<aprxPi2<<" with "<<nTerms<<" terms"<<endl;
+    
+    //Output the actual value of pi
+    cout<<"Pi exactly equals = "<<4*atan(1)<<endl;
     
     //Exit stage right
     return 0;
