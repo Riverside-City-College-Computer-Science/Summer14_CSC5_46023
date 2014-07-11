@@ -60,13 +60,13 @@ int main(int argc, char** argv)
     cout << "Would you classify your exercise habits as sedentary, somewhat active (exercise occasionally), active, or Highly active?";
     getline (cin, actStat);
     
-    if (actStat == 'Sedentary' || actStat == 'sedentary')
+    if (actStat == "Sedentary" || actStat == "sedentary")
         nBmr = bmr*sed;
-    else if (actStat == 'somewhat active' || actStat == 'Somewhat Active')
+    else if (actStat == "somewhat active" || actStat == "Somewhat Active")
         nBmr = bmr*someAct;
-    else if (actStat == 'Active' || actStat == 'active')
+    else if (actStat == "Active" || actStat == "active")
         nBmr = bmr*act;
-    else if (actStat == 'highly active' || actStat == 'Highly Active')
+    else if (actStat == "highly active" || actStat == "Highly Active")
         nBmr = bmr*highAct;
     else
         cout << "Invalid Input.";
