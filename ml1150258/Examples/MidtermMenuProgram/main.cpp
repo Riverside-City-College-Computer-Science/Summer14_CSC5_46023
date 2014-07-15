@@ -31,12 +31,12 @@ int main(int argv,char *argc[]){
         Menu();
         inN=getN();
         switch(inN){
-        case 1: problem1();break;
-        case 2: problem2();break;
-        case 3: problem3();break;
-        case 4: problem4();break;
-        case 5: problem5();break;
-        case 6: problem6();break;
+            case 1: problem1();break;
+            case 2: problem2();break;
+            case 3: problem3();break;
+            case 4: problem4();break;
+            case 5: problem5();break;
+            case 6: problem6();break;
             default:;
         };
     }while(inN<7);
