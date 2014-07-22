@@ -1,0 +1,6 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=00000018
+eax=00000000 ebx=00000034 ecx=80000038 edx=00000001 esi=0000002E edi=00000069
+ebp=00000021 esp=0028AC40 program=C:\Users\rcc\Desktop\ArrayExampleFill2DigitsOutputLessThanMaximum\dist\Debug\Cygwin_4.x-Windows\arrayexamplefill2digitsoutputlessthanmaximum.exe, pid 4480, thread main
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args
