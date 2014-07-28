@@ -56,7 +56,7 @@ void minList(int a[],int indx[],int n,int pos){
         //if(a[pos]>a[i])swap(a[pos],a[i]);
         //if(a[pos]>a[i])swapxor(a[pos],a[i]);
         //if(a[pos]>a[i])swapptr(a+pos,a+i);
-        if(*(a+*(indx+pos))>a[indx[i]])swapptr(&indx[pos],&indx[i]);
+        if(*(a+*(indx+pos))>*(a + *(indx + i)))swapptr(&indx[pos],&indx[i]);
     }
 }
 
@@ -94,7 +94,7 @@ void printArray(int a[],int n,int perLine){
     //Print out this number of elements->perLine
     cout<<endl;
     for(int i=0;i<n;i++){
-        cout<<a[i]<<" ";
+        cout<<*(a+ i)<<" ";
         if(i%perLine==(perLine-1))cout<<endl;
     }
     cout<<endl;
@@ -109,6 +109,6 @@ void fillArray(int a[],int indx[],int n){
     //Create loop and fill the array with 2 digit numbers
     for(int i=0;i<n;i++){
         *(a+i)=rand()%90+10;
-        indx[i]=i;
+        *(indx+ i)=i;
     }
 }
