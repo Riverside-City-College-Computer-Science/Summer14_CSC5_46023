@@ -1,0 +1,3 @@
+0 R C S S S C R R R C C R C S S S C R R C S S R C R S R S S R 
+1 R R R S S S C C C C S R S C R R C S C C C S S R C S R C S R 
+2 C C C S S R R R S C R S C S R C S R C S R C S R C S C S R C
