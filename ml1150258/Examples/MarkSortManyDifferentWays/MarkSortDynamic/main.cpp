@@ -9,7 +9,7 @@
 #include <ctime>
 using namespace std;
 
-void fillArray(int [],int);      //Fill a random 2 digit array
+int *fillArray(int);      //Fill a random 2 digit array
 void printArray(int [],int,int); //Print an array, perLine
 void swap(int &,int &);          //Swap with temp
 void swapxor(int &,int &);       //Swap with xor
@@ -18,17 +18,18 @@ void markSort(int [],int);       //Apply minList to the whole array
  
 int main(int argc, char** argv) {
     //Declare an array
-    const int SIZE=100;
-    int array[SIZE];
+    int size=100;
     //Fill the array
-    fillArray(array,SIZE);
+    int *array=fillArray(size);
     //Print the array
-    printArray(array,SIZE,10);
+    printArray(array,size,10);
     //Start figuring out a sort
     //Find the minimum in a list
-    markSort(array,SIZE);
+    markSort(array,size);
     //Print the result
-    printArray(array,SIZE,10);
+    printArray(array,size,10);
+    //Exit stage right
+    delete []array;
     return 0;
 }
 
@@ -69,14 +70,17 @@ void printArray(int a[],int n,int perLine){
     cout<<endl;
 }
 
-void fillArray(int a[],int n){
+int *fillArray(int n){
     //If calling this function once then you can
     //place the random number seed here else needs
     //to go into main
     //Set the Seed
     srand(static_cast<unsigned int>(time(0)));
+    //Allocate memory
+    int *a=new int[n];
     //Create loop and fill the array with 2 digit numbers
     for(int i=0;i<n;i++){
         a[i]=rand()%90+10;
     }
+    return a;
 }
