@@ -15,6 +15,7 @@ using namespace std;
 //Function prototypes
 void pause(int);
 void cntDwn(int,int);
+int timer();
 
 //Begin Execution here!
 int main(int argc, char** argv) {
@@ -22,10 +23,19 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Start the Count Down
+    cout<<"Time before countdown = "<<timer()<<" secs"<<endl;
     cntDwn(12,4);
+    cout<<"Time after countdown  = "<<timer()<<" secs"<<endl;
 
     //Exit stage right!
     return 0;
+}
+
+int timer(){
+    static int strt=time(0);
+    int now=time(0);
+    int secs=now-strt;
+    return secs;
 }
 
 void cntDwn(int strt,int paws){
@@ -44,5 +54,5 @@ void pause(int secs){
     do{
         stp=time(0);
         wait=stp-strt;
-    }while(wait<=secs);
+    }while(wait<secs);
 }
