@@ -13,9 +13,9 @@ using namespace std;
 //No global constants
 
 //Function prototypes
-void pause(int);
-void cntDwn(int,int);
-int timer(int=0);
+void pause(int);     //Pause in seconds
+void cntDwn(int,int);//Count down from to 0 by increment
+int timer(int=0);    //Just like a stop watch controlled by a flag
 
 //Begin Execution here!
 int main(int argc, char** argv) {
@@ -61,9 +61,10 @@ int timer(int flag){
     static int secs=time(0);
     static bool stop=false;
     int now=time(0);
+    //What state is the timer in?
     if(stop&&flag!=2){ //Stopped and not reset
         return secs;
-    }else if(flag==0){ //Normal timer
+    }else if(flag==0){ //Normal timer, defaulted parameter
         secs=now-strt;
     }else if(flag==3){ //Reset
         strt=time(0);
@@ -78,6 +79,10 @@ int timer(int flag){
     return secs;
 }
 
+//Count Down
+//Input
+//  strt -> Countdown start (secs)
+//  paws -> time output increment (secs)
 void cntDwn(int strt,int paws){
     //Perform the countdown
     do{
@@ -88,6 +93,9 @@ void cntDwn(int strt,int paws){
     cout<<strt<<" seconds"<<endl;
 }
 
+//Pause function
+//Input
+//  secs -> Number of seconds to pause exection
 void pause(int secs){
     //Start the time
     int stp,wait,strt=time(0);
