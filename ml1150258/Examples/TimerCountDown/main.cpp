@@ -14,7 +14,7 @@ using namespace std;
 
 //Function prototypes
 void pause(int);     //Pause in seconds
-void cntDwn(int,int);//Count down from to 0 by increment
+void cntDwn(int,int);//Count down from X to 0 by increment Y
 int timer(int=0);    //Just like a stop watch controlled by a flag
 
 //Begin Execution here!
@@ -24,23 +24,23 @@ int main(int argc, char** argv) {
     
     //Start the Count Down
     cout<<"Time before countdown = "<<timer()<<" secs"<<endl;
-    cntDwn(12,4);
+    cntDwn(12,4);//Start count down at 12 sec, Increment by 4 secs
     cout<<"Time after countdown  = "<<timer()<<" secs"<<endl;
     
     //Stop the timer
-    timer(1);
+    timer(1);//Stop the timer -> 1
     cout<<"Time after stop  = "<<timer()<<" secs"<<endl;
-    pause(5);
+    pause(5);//Pause 5 seconds
     cout<<"Time after 5 sec pause when stopped "<<timer()<<" secs"<<endl;
     
     //Restart the timer
-    timer(2);
+    timer(2);//Restart the timer -> 2
     cout<<"Time at restart  = "<<timer()<<" secs"<<endl;
-    pause(5);
+    pause(5);//Pause 5 seconds
     cout<<"Time after 5 sec pause when restarted "<<timer()<<" secs"<<endl;
 
     //Reset the timer
-    timer(3);
+    timer(3);//Reset the timer -> 3
     cout<<"Time after reset "<<timer()<<" secs"<<endl;
     
     //Exit stage right!
@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
 
 //Timer function
 //Input
-//   flag -> 0 used as a timer
+//   flag -> 0 used as a timer default
 //   flag -> 1 stop the timer
 //   flag -> 2 restart the timer
 //   flag -> 3 reset
@@ -57,10 +57,10 @@ int main(int argc, char** argv) {
 //   secs -> seconds elapsed
 int timer(int flag){
     //Declare Variables
-    static int strt=time(0);
-    static int secs=time(0);
-    static bool stop=false;
-    int now=time(0);
+    static int strt=time(0);//Remember the start
+    static int secs=time(0);//Remember elapsed time
+    static bool stop=false; //Remember if timer stopped
+    int now=time(0);        //Current time
     //What state is the timer in?
     if(stop&&flag!=2){ //Stopped and not reset
         return secs;
@@ -95,10 +95,11 @@ void cntDwn(int strt,int paws){
 
 //Pause function
 //Input
-//  secs -> Number of seconds to pause exection
+//  secs -> Number of seconds to pause execution
 void pause(int secs){
     //Start the time
     int stp,wait,strt=time(0);
+    //Wait the required number of seconds
     do{
         stp=time(0);
         wait=stp-strt;
